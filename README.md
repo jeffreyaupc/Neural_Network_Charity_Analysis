@@ -43,7 +43,7 @@ Result:
 ![2nd Optimization Attempt Result](Resources/optimization_2nd_attempt.PNG)
 
 3rd attempt:
-Modification: replaced 'APPLICATION_TYPE' values to 'Others' if counts are less than 200, replaced 'CLASSIFICATION' values to 'Others' if counts are less than 300,increased neurons (30 neurons per hidden layer), used MinMaxScaler, used tanh activation function
+Modification: did not drop the 'NAME' column, replaced its values to 'Others' if counts equal to 1, replaced 'APPLICATION_TYPE' values to 'Others' if counts are less than 200, replaced 'CLASSIFICATION' values to 'Others' if counts are less than 300, replaced 'ASK_AMT' values to 'Others' if counts are less than 5, increased neurons (15 neurons per hidden layer), used MinMaxScaler, used relu activation function
 
 Hidden layers: 2
 Neurons: 30 for all both layers
@@ -54,9 +54,11 @@ Result:
 
 ![3rd Optimization Attempt Result](Resources/optimization_3rd_attempt.PNG)
 
-There is no particular reasons for choosing numbers of layers and neurons. However some trials and errors were made (using up to 200 neurons per hidden layer for up to 15 layers, etc) to see if the model is underfitting or overfitting. 
+There is no particular reasons for choosing numbers of layers and neurons. However some trials and errors were made (using up to 200 neurons per hidden layer for up to 15 layers, etc) to see if the model is underfitting or overfitting. In the end, 15 hidden neurons with 2 hidden layers were enough to achieve better performance.
 
-After 3 attempts to optimize the model, the efforts were not enough such that its predictive accuracy reaches 75%. The model was only able to achieve 73.04% accuracy.
+After 3 attempts to optimize the model. The model was able to achieve 79.81% accuracy.
 
 ## Summary
-After 3 attempts to optimize the model. it was only able to achieve 73.04% accuracy.
+After 3 attempts to optimize the model. it was able to achieve over 75% accuracy, with 79.81%.
+
+Since there are multiple features in the dataset, a Random Forest Classifier model may be able to perform better on this dataset since one of its strength is the ability to weighting importance on features.
